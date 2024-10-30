@@ -1,20 +1,36 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!{% endblock %}
+{% block title %}Homepagina{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<!-- Welkomst tekst op homepage -->
+<div class="container-sm p-5 my-5 border">
+    <div class="row">
+        <div class="col">
+            <div class="container-fluid">
+                <h1>Webtechnologie II <small>- opdracht 4</small></h1>
+                <p>
+                    Deze webapplicatie is het resultaat van de vierde opdracht voor het vak webtechnologie II.<br>
+                    Daarbij is een volledige aanmeld- en inlogcyclus opgeleverd.
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/var/www/html/src/Controller/MainController.php</code></li>
-        <li>Your template at <code>/var/www/html/templates/main/index.html.twig</code></li>
-    </ul>
+                    Daarbij zijn de volgende eisen gesteld:
+                    <ul>
+                        <li>Het project is gemaakt in symfony en maakt gebruik van composer.</li>
+                        <li>Het project heeft een database.</li>
+                        <li>Er zitten meerdere controllers in het project.</li>
+                        <li>Er zijn controllers die gebruik maken van een twigtemplate.</li>
+                        <li>Optioneel: Er is gebruik gemaakt van een Docker.</li>
+                    </ul>
+
+                    Om dit te demonstreren zijn er twee webpagina's gemaakt.<br>
+                    Alle gebruikers mogen de openbare webpagina bezoeken.<br>
+                    Echter voor toegang naar de gesloten webpagina moet een account gemaakt worden.<br>
+                    Al deze elementen zijn te benaderen vanuit de navigatiebalk.
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
+
 {% endblock %}

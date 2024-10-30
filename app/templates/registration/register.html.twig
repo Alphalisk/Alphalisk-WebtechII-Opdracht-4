@@ -1,19 +1,32 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Register{% endblock %}
+{% block style %}
+    {{ parent() }}
+    .table {
+    margin: 10px;
+    }
+
+    tr {
+    padding: 10px;
+    }
+{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
 
-    {{ form_errors(registrationForm) }}
-
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+    <div class="container-sm p-5 my-5 border">
+        <h1>Register</h1>
+            {{ form_start(registrationForm) }}
+                <div class="row">{{ form_errors(registrationForm) }}</div>
+                <div class="row">{{ form_row(registrationForm.email) }}</div>
+                <div class="row">{{ form_row(registrationForm.plainPassword, {label: 'Password'}) }}</div>
+                <div class="row">{{ form_row(registrationForm.agreeTerms) }}</div>
+                <tr>
+                    <td><button type="submit" class="btn btn-primary">Registreer</button></td>
+                    <td><button type="reset" class="btn btn-danger">Reset formulier</button></td>
+                </tr>
+            {{ form_end(registrationForm) }}
+    </div>
 {% endblock %}
+
+

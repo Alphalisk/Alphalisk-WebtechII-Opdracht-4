@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <div class="container-fluid">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="navbar-brand" href="{{ path('app_main') }}">
+                    <img src="{{ asset('images/logo.avif') }}" alt="MyLogo" style="width:40px;" class="rounded-pill">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{{ path('app_main') }}">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Bibliotheek</a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ path('app_bibliotheek') }}" class="dropdown-item">Open</a></li>
+                    <li><a href="{{ path('app_gesloten_bibliotheek') }}" class="dropdown-item">Gesloten</a></li>
+                </ul>
+            </li>
+        </ul>
+        {% if app.user %}
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ path('app_logout') }}">Uitloggen</a>
+                    </li>
+                </ul>
+            </div>
+        {% else %}
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ path('app_login') }}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ path('app_register') }}">Register</a>
+                    </li>
+                </ul>
+            </div>
+        {% endif %}
+
+    </div>
+</nav>
