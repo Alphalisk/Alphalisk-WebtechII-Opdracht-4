@@ -1,20 +1,54 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello GeslotenBibliotheekController!{% endblock %}
+{% block title %}Open bibliotheek{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <div class="container-sm p-5 my-5 border">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/var/www/html/src/Controller/GeslotenBibliotheekController.php</code></li>
-        <li>Your template at <code>/var/www/html/templates/gesloten_bibliotheek/index.html.twig</code></li>
-    </ul>
-</div>
+        <h1>Welkom in de gesloten bibliotheek</h1>
+
+        <p>
+            Deze website wordt benadert vanuit de {{ controller_name }}.<br>
+            Op deze website is een carrousel met plaatjes van de afgesloten bibliotheek met geheime boeken.<br>
+            Alleen ingelogde gebruikers mogen hier komen.
+        </p>
+
+        <div class="row">
+            <div class="col-3"></div> <!-- voor de correcte uitlijning van de volgende kolom -->
+            <div class="col-6 text-center">
+                <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+                    <!-- Indicators/dots -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                    </div>
+
+                    <!-- De carousel zelf -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{{ asset('images/geheimebibliotheek.jpg') }}" alt="plaatje van bibliotheek" class="w-100 d-block">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ asset('images/geheimBoek.jpg') }}" alt="Plaatje van PHP kookboek" class="w-100 d-block">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ asset('images/Papyrus.jpg') }}" alt="Plaatje van boek" class="w-100 d-block">
+                        </div>
+                    </div>
+
+                    <!-- Link en rechts pijltjes -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
+

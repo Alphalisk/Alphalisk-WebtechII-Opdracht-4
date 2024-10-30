@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Hier kunt u inloggen.{% endblock %}
 
 {% block body %}
     <div class="container-sm p-5 my-5 border">
@@ -11,7 +11,7 @@
 
             {% if app.user %}
                 <div class="mb-3">
-                    <b>Let op!</b><br> Je bent al ingelogd met het account: {{ app.user.userIdentifier }}<br>
+                    <b>Let op!</b><br> U bent al ingelogd met het account: {{ app.user.userIdentifier }}<br>
                     Wilt u misschien uitloggen? <a href="{{ path('app_logout') }}">Logout</a>
                 </div>
             {% endif %}
@@ -40,7 +40,7 @@
                 #}
 
                 <tr>
-                    <td><button type="submit" class="btn btn-primary">Registreer</button></td>
+                    <td><button type="submit" class="btn btn-primary">Log in</button></td>
                     <td><button type="reset" class="btn btn-danger">Reset formulier</button></td>
                 </tr>
             </div>

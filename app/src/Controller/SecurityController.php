@@ -23,6 +23,19 @@ class SecurityController extends AbstractController
             'error' => $error,
         ]);
     }
+    #[Route(path: '/loginSucces', name: 'app_loginSucces')]
+    public function loginSucces(): Response
+    {
+        return $this->render('security/loginSucces.html.twig', [
+        ]);
+    }
+
+    #[Route(path: '/logoutSucces', name: 'app_logoutSucces')]
+    public function logoutSucces(): Response
+    {
+        return $this->render('security/logoutSucces.html.twig', [
+        ]);
+    }
 
     #[Route(path: '/logout', name: 'app_logout')]
     public function logout(): void
